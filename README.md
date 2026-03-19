@@ -123,6 +123,8 @@ Built with:
 - **Vue.js** — Shopware administration module
 - **Bootstrap 5** — modal and form styling (provided by Shopware storefront)
 
+Developed by [@Vicmescan](https://github.com/Vicmescan) with the assistance of [Claude](https://claude.ai) (Anthropic).
+
 ---
 
 ## License
