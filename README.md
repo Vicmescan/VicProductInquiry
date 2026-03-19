@@ -2,6 +2,8 @@
 
 A Shopware 6.7 plugin that replaces the add-to-cart button with a rental inquiry form for selected products. Ideal for rental shops (vehicles, equipment, spaces) where the customer needs to check availability before purchasing.
 
+One of the projects I worked on with my company required something similar. I wasn't able to do it back then, so I wanted to build it from scratch this time.
+
 ---
 
 ## Features
@@ -19,7 +21,7 @@ A Shopware 6.7 plugin that replaces the add-to-cart button with a rental inquiry
 
 ## Screenshots
 
-> *(Add screenshots here)*
+<img width="1044" height="847" alt="Screenshot 2026-03-19 at 11 49 50" src="https://github.com/user-attachments/assets/af90ac30-b316-457b-9954-b920def579b3" />
 
 ---
 
