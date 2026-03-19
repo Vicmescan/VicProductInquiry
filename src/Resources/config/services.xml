@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <!--
+            InquiryDefinition se registra con el tag shopware.entity.definition.
+            Esto hace que Shopware registre automáticamente el repositorio
+            'vic_product_inquiry.repository' disponible para inyección.
+        -->
+        <service id="Vic\ProductInquiry\Core\Content\Inquiry\InquiryDefinition">
+            <tag name="shopware.entity.definition" entity="vic_product_inquiry"/>
+        </service>
+
+        <service id="Vic\ProductInquiry\Storefront\Controller\InquiryController" public="true">
+            <argument type="service" id="mailer.mailer"/>
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService"/>
+            <!-- El repositorio se registra automáticamente cuando la Definition tiene el tag shopware.entity.definition -->
+            <argument type="service" id="vic_product_inquiry.repository"/>
+
+            <!--
+                Inyectamos el service_container explícitamente vía setContainer().
+                Esto es lo que necesita AbstractController (del que hereda StorefrontController)
+                para que funcionen los helpers: addFlash(), redirectToRoute(), trans(), etc.
+                En Shopware plugins no basta con autoconfigure — hay que hacerlo explícito.
+            -->
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+
+            <tag name="controller.service_arguments"/>
+        </service>
+
+    </services>
+
+</container>

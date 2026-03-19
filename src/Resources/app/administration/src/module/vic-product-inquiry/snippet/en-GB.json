@@ -1,0 +1,14 @@
+{
+    "vic-product-inquiry": {
+        "general": {
+            "title": "Product Inquiries"
+        },
+        "list": {
+            "columnDate":    "Date",
+            "columnProduct": "Product",
+            "columnName":    "Customer",
+            "columnEmail":   "Email",
+            "columnMessage": "Message"
+        }
+    }
+}

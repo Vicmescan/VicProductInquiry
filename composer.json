@@ -1,0 +1,32 @@
+{
+    "name": "vicmescan/vic-product-inquiry",
+    "description": "Replaces the add-to-cart button with an inquiry form for selected products",
+    "version": "1.0.0",
+    "type": "shopware-platform-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vicmescan",
+            "homepage": "https://github.com/Vicmescan"
+        }
+    ],
+    "require": {
+        "shopware/core": "~6.7.0"
+    },
+    "extra": {
+        "shopware-plugin-class": "Vic\\ProductInquiry\\VicProductInquiry",
+        "label": {
+            "de-DE": "Produktanfrage",
+            "en-GB": "Product Inquiry"
+        },
+        "description": {
+            "de-DE": "Ersetzt den Warenkorb-Button durch ein Anfrage-Formular für ausgewählte Produkte.",
+            "en-GB": "Replaces the add-to-cart button with an inquiry form for selected products."
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Vic\\ProductInquiry\\": "src/"
+        }
+    }
+}

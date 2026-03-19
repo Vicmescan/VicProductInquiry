@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+
+    <card>
+        <title>Email Settings</title>
+        <title lang="de-DE">E-Mail Einstellungen</title>
+        <title lang="es-ES">Configuración de correo</title>
+
+        <!--
+            Si se rellena este campo, los emails de consulta irán a esta dirección
+            en vez de al email general de la tienda (core.basicInformation.email).
+            El name define la clave: VicProductInquiry.config.recipientEmail
+        -->
+        <input-field type="text">
+            <name>recipientEmail</name>
+            <label>Recipient email</label>
+            <label lang="de-DE">Empfänger E-Mail</label>
+            <label lang="es-ES">Email destinatario</label>
+            <helpText>Leave empty to use the shop's default contact email.</helpText>
+            <helpText lang="es-ES">Déjalo vacío para usar el email de contacto general de la tienda.</helpText>
+        </input-field>
+
+        <input-field type="text">
+            <name>emailSubjectPrefix</name>
+            <label>Email subject prefix</label>
+            <label lang="de-DE">E-Mail Betreff Präfix</label>
+            <label lang="es-ES">Prefijo del asunto del email</label>
+            <defaultValue>Product inquiry</defaultValue>
+        </input-field>
+
+    </card>
+
+    <card>
+        <title>Storefront Settings</title>
+        <title lang="de-DE">Storefront Einstellungen</title>
+        <title lang="es-ES">Configuración de la tienda</title>
+
+        <input-field type="text">
+            <name>buttonLabel</name>
+            <label>Inquiry button label</label>
+            <label lang="de-DE">Schaltflächentext</label>
+            <label lang="es-ES">Texto del botón de consulta</label>
+            <defaultValue>Request availability</defaultValue>
+        </input-field>
+
+    </card>
+
+</config>

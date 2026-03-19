@@ -1,0 +1,29 @@
+{
+    "vic": {
+        "productInquiry": {
+            "button": {
+                "label": "Verfügbarkeit anfragen"
+            },
+            "modal": {
+                "title": "Verfügbarkeit anfragen",
+                "form": {
+                    "name": "Ihr Name",
+                    "email": "Ihre E-Mail",
+                    "startDate": "Startdatum",
+                    "endDate": "Enddatum",
+                    "message": "Nachricht (optional)",
+                    "submit": "Anfrage senden"
+                },
+                "summary": {
+                    "days": "Anzahl Tage",
+                    "dailyRate": "Tagespreis",
+                    "total": "Geschätzter Gesamtpreis"
+                }
+            },
+            "flash": {
+                "success": "Ihre Anfrage wurde gesendet. Wir werden uns bald bei Ihnen melden.",
+                "error": "Bitte geben Sie Ihren Namen und eine gültige E-Mail-Adresse ein."
+            }
+        }
+    }
+}

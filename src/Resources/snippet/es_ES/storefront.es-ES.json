@@ -1,0 +1,29 @@
+{
+    "vic": {
+        "productInquiry": {
+            "button": {
+                "label": "Consultar disponibilidad"
+            },
+            "modal": {
+                "title": "Consultar disponibilidad",
+                "form": {
+                    "name": "Tu nombre",
+                    "email": "Tu email",
+                    "startDate": "Fecha de inicio",
+                    "endDate": "Fecha de fin",
+                    "message": "Mensaje (opcional)",
+                    "submit": "Enviar consulta"
+                },
+                "summary": {
+                    "days": "Número de días",
+                    "dailyRate": "Precio por día",
+                    "total": "Total estimado"
+                }
+            },
+            "flash": {
+                "success": "Tu consulta ha sido enviada. Te responderemos en breve.",
+                "error": "Por favor, introduce tu nombre y un email válido."
+            }
+        }
+    }
+}

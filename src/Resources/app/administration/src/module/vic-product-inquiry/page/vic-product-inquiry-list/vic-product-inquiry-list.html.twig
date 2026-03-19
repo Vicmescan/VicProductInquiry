@@ -1,0 +1,34 @@
+{% block vic_product_inquiry_list %}
+<sw-page class="vic-product-inquiry-list">
+
+    {% block vic_product_inquiry_list_header %}
+    <template #smart-bar-header>
+        <h2>{{ $tc('vic-product-inquiry.general.title') }}</h2>
+    </template>
+    {% endblock %}
+
+    {% block vic_product_inquiry_list_content %}
+    <template #content>
+
+        <sw-data-grid
+            :dataSource="inquiries"
+            :columns="columns"
+            :isLoading="isLoading"
+            :showSelection="false"
+            :showActions="false"
+            :showPreviews="false">
+
+            <!-- Columna de fecha: la formateamos con el filtro date de Shopware -->
+            {% block vic_product_inquiry_column_date %}
+            <template #column-createdAt="{ item }">
+                {{ item.createdAt | date({ year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }) }}
+            </template>
+            {% endblock %}
+
+        </sw-data-grid>
+
+    </template>
+    {% endblock %}
+
+</sw-page>
+{% endblock %}
