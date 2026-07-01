@@ -2,6 +2,7 @@
 
 namespace Vic\ProductInquiry;
 
+use Doctrine\DBAL\Connection;
 use Shopware\Core\Framework\Plugin;
 use Shopware\Core\Framework\Plugin\Context\InstallContext;
 use Shopware\Core\Framework\Plugin\Context\UninstallContext;
@@ -28,6 +29,14 @@ class VicProductInquiry extends Plugin
         }
 
         $this->getCustomFieldInstaller()->uninstall($uninstallContext->getContext());
+
+        // Shopware borra el historial de migraciones antes de llamar a uninstall() (ver
+        // PluginLifecycleService::uninstallPlugin), asumiendo que aquí eliminamos las tablas.
+        // Si no lo hacemos, una reinstalación vuelve a ejecutar las migraciones desde cero
+        // sobre una tabla que nunca se borró, y "ADD COLUMN" falla con "Duplicate column name".
+        $this->container->get(Connection::class)->executeStatement(
+            'DROP TABLE IF EXISTS `vic_product_inquiry`'
+        );
     }
 
     public function update(UpdateContext $updateContext): void
