@@ -27,14 +27,23 @@ Shopware.Component.register('vic-product-inquiry-list', {
             return this.repositoryFactory.create('vic_product_inquiry');
         },
 
+        // Shopware.Filter.register('date', ...) expone el filtro como una función
+        // inyectable, no como un filtro Twig "| date(...)" — así lo consumen los
+        // módulos core (p.ej. sw-order-delivery-metadata).
+        dateFilter() {
+            return Shopware.Filter.getByName('date');
+        },
+
         // Definición de columnas para el componente sw-data-grid de Shopware.
         columns() {
             return [
                 { property: 'createdAt',     label: this.$tc('vic-product-inquiry.list.columnDate'),    sortable: true  },
-                { property: 'productName',   label: this.$tc('vic-product-inquiry.list.columnProduct'), sortable: true  },
-                { property: 'customerName',  label: this.$tc('vic-product-inquiry.list.columnName'),    sortable: true  },
-                { property: 'customerEmail', label: this.$tc('vic-product-inquiry.list.columnEmail'),   sortable: true  },
-                { property: 'message',       label: this.$tc('vic-product-inquiry.list.columnMessage'), sortable: false },
+                { property: 'productName',   label: this.$tc('vic-product-inquiry.list.columnProduct'),   sortable: true  },
+                { property: 'customerName',  label: this.$tc('vic-product-inquiry.list.columnName'),      sortable: true  },
+                { property: 'customerEmail', label: this.$tc('vic-product-inquiry.list.columnEmail'),     sortable: true  },
+                { property: 'startDate',     label: this.$tc('vic-product-inquiry.list.columnStartDate'), sortable: true  },
+                { property: 'endDate',       label: this.$tc('vic-product-inquiry.list.columnEndDate'),   sortable: true  },
+                { property: 'message',       label: this.$tc('vic-product-inquiry.list.columnMessage'),   sortable: false },
             ];
         },
     },

@@ -21,7 +21,20 @@
             <!-- Columna de fecha: la formateamos con el filtro date de Shopware -->
             {% block vic_product_inquiry_column_date %}
             <template #column-createdAt="{ item }">
-                {{ item.createdAt | date({ year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }) }}
+                {{ dateFilter(item.createdAt, { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }) }}
+            </template>
+            {% endblock %}
+
+            <!-- Periodo de alquiler solicitado por el cliente (solo si el producto tiene modo consulta) -->
+            {% block vic_product_inquiry_column_start_date %}
+            <template #column-startDate="{ item }">
+                {{ dateFilter(item.startDate, { year: 'numeric', month: '2-digit', day: '2-digit' }) }}
+            </template>
+            {% endblock %}
+
+            {% block vic_product_inquiry_column_end_date %}
+            <template #column-endDate="{ item }">
+                {{ dateFilter(item.endDate, { year: 'numeric', month: '2-digit', day: '2-digit' }) }}
             </template>
             {% endblock %}
 

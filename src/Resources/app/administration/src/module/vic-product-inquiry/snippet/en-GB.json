@@ -4,11 +4,13 @@
             "title": "Product Inquiries"
         },
         "list": {
-            "columnDate":    "Date",
-            "columnProduct": "Product",
-            "columnName":    "Customer",
-            "columnEmail":   "Email",
-            "columnMessage": "Message"
+            "columnDate":      "Date",
+            "columnProduct":   "Product",
+            "columnName":      "Customer",
+            "columnEmail":     "Email",
+            "columnStartDate": "Rental start",
+            "columnEndDate":   "Rental end",
+            "columnMessage":   "Message"
         }
     }
 }
