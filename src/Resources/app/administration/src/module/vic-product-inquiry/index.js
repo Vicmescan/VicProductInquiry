@@ -1,3 +1,4 @@
+import './acl';
 import './page/vic-product-inquiry-list';
 import enGB from './snippet/en-GB.json';
 
@@ -19,11 +20,16 @@ Shopware.Module.register('vic-product-inquiry', {
         list: {
             component: 'vic-product-inquiry-list',
             path: 'list',
+            meta: {
+                privilege: 'vic_product_inquiry.viewer',
+            },
         },
     },
 
     // navigation define el ítem que aparece en el menú lateral del admin.
     // parent: 'sw-catalogue' lo coloca bajo el menú "Catálogo".
+    // privilege oculta el ítem a los usuarios sin vic_product_inquiry:read,
+    // en vez de mostrarlo y bloquear el acceso al hacer clic.
     navigation: [{
         label: 'vic-product-inquiry.general.title',
         color: '#ff68b4',
@@ -31,5 +37,6 @@ Shopware.Module.register('vic-product-inquiry', {
         icon: 'regular-envelope',
         parent: 'sw-catalogue',
         position: 100,
+        privilege: 'vic_product_inquiry.viewer',
     }],
 });

@@ -1,0 +1,23 @@
+{
+  "base": "/bundles/vicproductinquiry/administration/",
+  "entryPoints": {
+    "vic-product-inquiry": {
+      "css": [],
+      "dynamic": [],
+      "js": [
+        "/bundles/vicproductinquiry/administration/assets/vic-product-inquiry-CW_rJny-.js"
+      ],
+      "legacy": false,
+      "preload": []
+    }
+  },
+  "legacy": false,
+  "metadatas": {},
+  "version": [
+    "7.1.0",
+    7,
+    1,
+    0
+  ],
+  "viteServer": null
+}
