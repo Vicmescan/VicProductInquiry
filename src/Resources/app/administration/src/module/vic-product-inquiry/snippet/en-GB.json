@@ -12,5 +12,12 @@
             "columnEndDate":   "Rental end",
             "columnMessage":   "Message"
         }
+    },
+    "sw-privileges": {
+        "permissions": {
+            "vic_product_inquiry": {
+                "label": "Product Inquiries"
+            }
+        }
     }
 }
